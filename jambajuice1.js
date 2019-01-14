@@ -16,8 +16,8 @@ class Drink {
 
     this.item = item;
     this.size = size;
-    this.price = item.price[size];
-    this.calories = item.calories[size];
+    this.price = item.price.size;
+    this.calories = item.calories.size;
   }
 }
 
@@ -33,20 +33,67 @@ class Order {
     this.orders.push(drink);
   }
 
-  totalCost() {
-
-    let total = 0;
-    for(let drinks of this.orders) {
-      total += drinks.price;
-    }
-    return total;
-  }
-
-
-
 }
 
+class Inventory {
 
+	constructor() {
+  
+  
+  	    /* this.inventory = [apple = {name: "apple", total: 0},banana = {name: "banana", total: 0},
+  	                     orange = {name: "orange", total: 0}, papaya = {name: "papaya", total: 0},
+  	                     ];  */
+                         
+  	this.inventory = {}
+  }
+  
+  
+	
+  setInventory(ingredient, servings) {
+  	
+    this.inventory[ingredient] = servings;
+  }
+  
+  haveServing(ingredient) {
+  	
+    if(this.inventory[ingredient] > 0) {
+    
+      this.inventory[ingredient] -= 1;
+      return true;
+    } else {
+    	return false;
+    }
+  }
+}
+
+class Store {
+	
+  constructor(inventory) {
+  	
+    this.inventory = inventory;
+  }  
+  
+  
+  placeOrder(order) {
+  
+  	let drinks = [];
+    
+    for(let drink of order.orders) {
+    	
+      for(let itms of drink.item.ingredients) {
+      	
+        if(this.inventory.haveServing(itms)) {
+        
+        	drinks.push(drink);
+        }
+      }
+      return drinks;
+    }
+    
+  }
+  
+  
+}
 class Menu {
 
   constructor() {
@@ -121,21 +168,23 @@ const StrawberryWhirl  = new Menuitem("StrawberryWhirl", ingredients = ["strawbe
                                    
 let jamba = new Menu();
 let drink = new Drink(StrawberryDragon, "small");
-let drink2 = new Drink(StrawberryDragon, "large");
-let order2Go = new Order();
-order2Go.orderDrink(drink);
-order2Go.orderDrink(drink2);
-console.log(order2Go.totalCost());
+let shakeMill = new Inventory();
+let order = new Order();
+let shakeStore = new Store(shakeMill);
 
+shakeMill.setInventory("orange", 100);
+order.orderDrink(drink);
+order.orderDrink(drink);
 jamba.addMenuItem(StrawberryDragon);
 jamba.addMenuItem(StrawberryWhirl);
 jamba.addMenuItem(PapayaSunrise);
+console.log(shakeStore.placeOrder(order));
 
 /* console.log(jamba); */
-/* console.log(jamba.findMenuItems("mango")); */ 
-console.log(drink);
+//console.log(jamba.findMenuItems("mango")); 
+//console.log(drink);
 
-
-
+//console.log(shakeMill);
+//console.log(shakeMill.haveServing("kiwi"));
 
 
