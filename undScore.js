@@ -63,3 +63,15 @@ function allBig(arr) {
 
 // true
 console.log(allBig([{num: 101}, {num: 1000, name: "Roy"} ]));
+
+
+function fishNames(arr) {
+	
+  let newArr = _.pluck(arr, 'fish'); 
+	return _.uniq(newArr);  
+  
+}
+
+
+console.log(fishNames([{fish: "Ahi", num: 100},
+ {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350} ]));
