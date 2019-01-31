@@ -50,5 +50,16 @@ function longStrings(arr) {
   
 }
 ppl = ["100000000000", "20000000000000", "310000000000005"];
-// "123"
+
 longStrings(ppl);
+
+
+function allBig(arr) {
+	
+  
+	return _.every(arr, bigNum = (n) => {return n['num'] > 100});  
+  
+}
+
+// true
+console.log(allBig([{num: 101}, {num: 1000, name: "Roy"} ]));
