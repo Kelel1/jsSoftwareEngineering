@@ -40,7 +40,7 @@ function longString(arr) {
 ppl = ["1", "20000000000000", "315"];
 // "123"
 longString(ppl);
-
+// _.filter
 function longStrings(arr) {
 	
   
@@ -53,7 +53,7 @@ ppl = ["100000000000", "20000000000000", "310000000000005"];
 
 longStrings(ppl);
 
-
+// _.every
 function allBig(arr) {
 	
   
@@ -64,7 +64,7 @@ function allBig(arr) {
 // true
 console.log(allBig([{num: 101}, {num: 1000, name: "Roy"} ]));
 
-
+// _.pluck & _.uniq
 function fishNames(arr) {
 	
   let newArr = _.pluck(arr, 'fish'); 
@@ -76,6 +76,7 @@ function fishNames(arr) {
 console.log(fishNames([{fish: "Ahi", num: 100},
  {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350} ]));
 
+ // _.sortBy
  function mostFishList(arr) {
 	
   
@@ -86,6 +87,7 @@ console.log(fishNames([{fish: "Ahi", num: 100},
 
 console.log(mostFishList([{fish: "Ahi", num: 100}, {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350}]));
 
+// _.groupBy
 function fishGroups(arr) {
 	
   
@@ -94,3 +96,14 @@ function fishGroups(arr) {
 }
 
 console.log(fishGroups([{fish: "Ahi", num: 100}, {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350}]));
+
+// _.pluck & _.reduce
+function numFish(arr) {
+	
+  let newArr = _.pluck(arr, 'num');
+	return _.reduce(newArr, function(counter, numberOfFish){return counter + numberOfFish}, 0);  
+  
+}
+
+
+console.log(numFish([{fish: "Ahi", num: 100}, {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350}]));
