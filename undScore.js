@@ -75,3 +75,13 @@ function fishNames(arr) {
 
 console.log(fishNames([{fish: "Ahi", num: 100},
  {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350} ]));
+
+ function mostFishList(arr) {
+	
+  
+	return _.sortBy(arr, mostFish = (n) => {return n['num']});  
+  
+}
+
+
+console.log(mostFishList([{fish: "Ahi", num: 100}, {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350}]));
