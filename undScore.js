@@ -85,3 +85,12 @@ console.log(fishNames([{fish: "Ahi", num: 100},
 
 
 console.log(mostFishList([{fish: "Ahi", num: 100}, {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350}]));
+
+function fishGroups(arr) {
+	
+  
+	return _.groupBy(arr, mostFish = (n) => {return n['fish']});  
+  
+}
+
+console.log(fishGroups([{fish: "Ahi", num: 100}, {fish: "Ahi", num: 10000}, {fish: "Opah", num: 800}, {fish: "Opah", num: 350}]));
