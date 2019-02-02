@@ -38,14 +38,14 @@ let testData = [
   }
   
   function percentageHawaiian(data) {
+
+	
+  let hawaiiLegacy = _.filter(data, function(n){return n['HAWAIIAN_LEGACY'] == 'HAWAIIAN';   
   
-      //let size = _.size(data);
-    let hawaiiLegacy = _.filter(data, function(n){if(n['HAWAIIAN_LEGACY'] == 'HAWAIIAN') {  
-        return n;
-    }});
-    
-    
-      return ((totalDegrees(hawaiiLegacy)/ totalDegrees(data)) * 100);
-  }
+  });
+  
+  
+	return ((totalDegrees(hawaiiLegacy)/ totalDegrees(data)) * 100);
+}
   
   console.log(percentageHawaiian(uhdata));
