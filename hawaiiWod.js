@@ -40,7 +40,7 @@ let testData = [
   function percentageHawaiian(data) {
 
 	
-  let hawaiiLegacy = _.filter(data, function(n){return n['HAWAIIAN_LEGACY'] == 'HAWAIIAN';   
+  let hawaiiLegacy = _.filter(data, function(n){return n['HAWAIIAN_LEGACY'] === 'HAWAIIAN';   
   
   });
   
@@ -49,3 +49,12 @@ let testData = [
 }
   
   console.log(percentageHawaiian(uhdata));
+
+
+  // need to complete for WOD pt.2
+  function totalDegreesByYear(data, year) {
+
+    return  totalDegrees = _.filter(data, function(n){return n['FISCAL_YEAR'] == year});
+  }
+  
+  console.log(totalDegreesByYear(uhdata, 2010));
