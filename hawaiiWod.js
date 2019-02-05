@@ -54,9 +54,17 @@ let testData = [
   
   function totalDegreesByYear(data, year) {
 
-    let degreeCount = _.filter(data, function(n){return n['FISCAL_YEAR'] == year});
+    let degreeCount = _.filter(data, function(n){return n['FISCAL_YEAR'] === year});
     
     console.log(_.reduce(degreeCount, function(val, n){return val += n['AWARDS']}, 0));
   }
   
   totalDegreesByYear(uhdata, 2013);
+
+  
+  function listCampuses(data) {
+
+    console.log(_.uniq(data, function(c){return c['CAMPUS']}));
+  }
+    
+  listCampuses(uhdata);
