@@ -51,10 +51,12 @@ let testData = [
   console.log(percentageHawaiian(uhdata));
 
 
-  // need to complete for WOD pt.2
+  
   function totalDegreesByYear(data, year) {
 
-    return  totalDegrees = _.filter(data, function(n){return n['FISCAL_YEAR'] == year});
+    let degreeCount = _.filter(data, function(n){return n['FISCAL_YEAR'] == year});
+    
+    console.log(_.reduce(degreeCount, function(val, n){return val += n['AWARDS']}, 0));
   }
   
-  console.log(totalDegreesByYear(uhdata, 2010));
+  totalDegreesByYear(uhdata, 2013);
