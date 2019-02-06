@@ -61,10 +61,23 @@ let testData = [
   
   totalDegreesByYear(uhdata, 2013);
 
-  
+
   function listCampuses(data) {
 
     console.log(_.uniq(data, function(c){return c['CAMPUS']}));
   }
     
   listCampuses(uhdata);
+
+  // professor solution for listCampusDegrees
+
+  function listCampusDegrees(data) { 
+  
+    let campus = _.groupBy(data, "CAMPUS");
+    
+    let degNum = _.mapObject(campus, totalDegrees);
+   
+   
+   return (degNum);
+   
+    }
