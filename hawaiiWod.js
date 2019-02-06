@@ -81,3 +81,15 @@ let testData = [
    return (degNum);
    
     }
+
+  
+  function maxDegrees(data) {
+
+	  let years = _.groupBy(data, 'FISCAL_YEAR');
+    
+    let degreesByYear = _.mapObject(years, totalDegrees)
+    
+    let vals = _.values(degreesByYear);
+    
+    return _.max(vals);
+}
