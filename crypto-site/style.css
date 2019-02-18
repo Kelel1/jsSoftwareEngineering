@@ -1,9 +1,51 @@
 body {
 
     background-color: lightgray;
-    margin: 10px, 50px;
+    margin: 10px 50px;
+}
+
+#Bitcoin {
+
+    padding-right: 30px;
+}
+
+#Ethereum {
+
+    padding-right: 30px;
+}
+
+.grid-container {
+
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    margin: 20px;
+
+}
+
+h1, h3 {
+
+    font-family: 'Oswald', sans-serif;
+}
+
+img {
+    float: left;
+    padding-right: 10px;
 }
 
 p {
     color: black;
 }
+
+li > a {
+
+    color: darkblue;
+    text-decoration: none;
+}
+
+.links > li {
+
+    display: inline-block;   
+    padding-right: 125px;     
+     
+}
+
